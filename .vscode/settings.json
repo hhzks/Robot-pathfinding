@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "graphics.h": "c",
+        "robot.h": "c",
+        "stdio.h": "c",
+        "map.h": "c"
+    }
+}
