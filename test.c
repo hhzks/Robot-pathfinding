@@ -21,10 +21,9 @@ void turnAround(Robot *robot){
 }
 
 int main(){
-    createBackground();
+    createArena();
     Robot aRobot = {5,5,North};
     Robot *pRobot = &aRobot;
-    createMultipleMarkers(20);
     for(int i = 0; i < 1000; i++){
         if (atMarker(pRobot)){
             pickUpMarker(pRobot);
@@ -35,15 +34,9 @@ int main(){
         }
         else{
             left(pRobot);
-            updateScreen(pRobot);
-            sleep(100);
-            forward(pRobot);
-            updateScreen(pRobot);
-            sleep(100);
-            left(pRobot);
         }
         updateScreen(pRobot);
-        sleep(100);
+        sleep(20);
     }
     return 0;
 }

@@ -3,6 +3,8 @@
         "graphics.h": "c",
         "robot.h": "c",
         "stdio.h": "c",
-        "map.h": "c"
+        "map.h": "c",
+        "stdlib.h": "c",
+        "time.h": "c"
     }
 }

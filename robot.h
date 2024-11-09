@@ -16,6 +16,8 @@ typedef struct{
     int markerCount;
 } Robot;
 
+//typedef struct Robot Robot;
+
 void drawRobot(Robot *robot);
 void forward(Robot *robot);
 void left(Robot *robot);
