@@ -1,16 +1,39 @@
-#define GRIDROWS 15
-#define GRIDCOLUMNS 20
+#ifndef MAP_H
+#define MAP_H
+
 #define CELLSIZE 50
 
-enum cellType {open, marker, obstacle, wall};
+extern int gridRows;
+extern int gridColumns;
+
+enum direction {North, East, South, West};
+typedef enum direction direction;
+
+typedef struct {
+    int row;
+    int column;
+    direction orientation;
+    int markerCount;
+    int **visitedMatrix;
+} Robot;
+
+typedef struct {
+    int row;
+    int column;
+} Cell;
+
+enum cellType {open, marker, obstacle, wall, home};
 typedef enum cellType cellType;
 
-void drawMarker(int,int);
-void createMarker(int,int);
-void destroyMarker(int,int);
-int isBlocked(int, int);
+void drawRobot(Robot *robot);
+void drawMarker(int, int);
+void clearMarker(int, int);
 int isMarker(int, int);
-int isWall(int, int);
-int isObstacle(int, int);
 int isBlocked(int, int);
+int isHome(int, int);
+int markersInGrid();
+Cell chooseRandomOpenCell();
 void createArena();
+void freeArenaMemory();
+
+#endif
